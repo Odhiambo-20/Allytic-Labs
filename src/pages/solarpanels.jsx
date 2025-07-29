@@ -161,8 +161,8 @@ const SolarPanels = () => {
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
           <video
-            width="1920"
-            height="1080"
+            width="1420"
+            height="100"
             autoPlay
             muted
             loop

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Bot, Cpu, Zap, Shield, Brain, Cog, ChevronRight, Star, Users, Award, Instagram, Github, Youtube, Linkedin } from 'lucide-react';
+import AllyticVideo from '../assets/Allytic.mp4';
 
 const robots = [
   {
@@ -89,13 +90,39 @@ function Robots() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      <header className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm"></div>
-        <div className="relative max-w-7xl mx-auto px-6 py-16">
+      {/* Hero Section with Video Background */}
+      <div className="relative overflow-hidden min-h-screen flex items-center pt-20">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            width="1920"
+            height="1080"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+            style={{
+              minWidth: '100%',
+              minHeight: '100%',
+              width: 'auto',
+              height: 'auto',
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)'
+            }}
+          >
+            <source src={AllyticVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          {/* Subtle dark overlay to ensure text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-8 animate-pulse">
-              <Bot className="w-10 h-10 text-white" />
-            </div>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
               Future Robotics
             </h1>
@@ -113,7 +140,7 @@ function Robots() {
             </div>
           </div>
         </div>
-      </header>
+      </div>
 
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6">
